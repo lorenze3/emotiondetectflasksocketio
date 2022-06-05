@@ -1,0 +1,9 @@
+flask
+tensorflow==2.9.1
+opencv-python
+numpy
+flask-socketio
+pillow
+base64
+imutils
+flask_cors
