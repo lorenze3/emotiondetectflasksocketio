@@ -21,7 +21,7 @@ emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutra
 facecasc = cv2.CascadeClassifier('./static/haarcascade_frontalface_default.xml')
 #load pretrained emotion model
 #model = tf.keras.models.load_model('./static/emoteSaved')
-model = tf.keras.models.load_model('./static/emote.h5')
+#model = tf.keras.models.load_model('./static/emote.h5')
 
 #detect emotion and put frame in place
 def detect_emote(frame):
@@ -32,11 +32,11 @@ def detect_emote(frame):
       cv2.rectangle(frame, (x, y-50), (x+w, y+h+10), (255, 0, 0), 2)
       roi_gray = gray[y:y + h, x:x + w]
       cropped_img = np.expand_dims(np.expand_dims(cv2.resize(roi_gray, (48, 48)), -1), 0)
-      prediction = model.predict(cropped_img)
-      maxindex = int(np.argmax(prediction))
-      emote_text = emotion_dict[maxindex]
+      #prediction = model.predict(cropped_img)
+      #maxindex = int(np.argmax(prediction))
+      #emote_text = emotion_dict[maxindex]
       
-      cv2.putText(frame, emote_text, (x+20, y-60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+      #cv2.putText(frame, emote_text, (x+20, y-60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
       
   return frame
 
