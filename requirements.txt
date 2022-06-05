@@ -4,6 +4,5 @@ opencv-python
 numpy
 flask-socketio
 pillow
-base64
 imutils
 flask_cors
