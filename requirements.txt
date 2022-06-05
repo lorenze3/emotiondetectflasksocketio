@@ -6,3 +6,4 @@ flask-socketio
 pillow
 imutils
 flask_cors
+gunicorn
