@@ -1,5 +1,5 @@
 flask
-tensorflow==2.9.1
+tensorflow-cpu
 opencv-python
 numpy
 flask-socketio
